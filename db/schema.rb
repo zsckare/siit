@@ -11,7 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160601204318) do
+ActiveRecord::Schema.define(version: 20160601214031) do
+
+  create_table "assigneds", force: :cascade do |t|
+    t.integer  "subject_id"
+    t.integer  "student_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "scores", force: :cascade do |t|
     t.integer  "score"
