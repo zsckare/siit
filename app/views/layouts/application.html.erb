@@ -5,10 +5,29 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
+
 </head>
 <body>
+	  <nav class="red darken-4" >
+	    <div class="nav-wrapper">
+	      <%= link_to "Siit",root_path,class: 'brand-logo' %>
+	      <ul id="nav-mobile" class="right hide-on-med-and-down">
+	        
+	        <li><%= link_to "Maestros",teachers_path %></li>
+	        <li><%= link_to "Alumnos",students_path %></li>
+	        <li><%= link_to "Materias",subjects_path %></li>
+	      </ul>
+	    </div>
+	  </nav>
 
-<%= yield %>
+	<div class="container">
+		<div class="card padding-largo">
+			<%= yield %>	
+		</div>
+	</div>
 
+	<script src="https://code.jquery.com/jquery-2.2.0.min.js" ></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
 </body>
 </html>
