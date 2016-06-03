@@ -16,3 +16,6 @@
 .padding-largo{
 	padding: 1.2em;
 }
+select{
+	display: block !important;
+}

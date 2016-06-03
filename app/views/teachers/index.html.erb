@@ -22,9 +22,9 @@
                 <td><%= teacher.lastname %></td>
                 <td><%= teacher.user %></td>
                 <td>
-                  <%= link_to 'Show', teacher , class: 'btn'%>
-                  <%= link_to 'Edit', edit_teacher_path(teacher) , class: 'btn'%>
-                  <%= link_to 'Destroy', teacher, method: :delete, data: { confirm: 'Are you sure?' } , class: 'btn'%>
+                  <%= link_to 'Ver', teacher , class: 'btn'%>
+                  <%= link_to 'Editar', edit_teacher_path(teacher) , class: 'btn'%>
+                  <%= link_to 'Eliminar', teacher, method: :delete, data: { confirm: 'Are you sure?' } , class: 'btn'%>
                 </td>
               </tr>
             <% end %>

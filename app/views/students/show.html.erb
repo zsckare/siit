@@ -1,24 +1,45 @@
-<p id="notice"><%= notice %></p>
+<div class="row">
+	<div class="col s12 m12 l12 padding-largo">
+		<div class="row">
+			<div class="col s12 m12 l6">
+						<p>
+						  <strong>Name:</strong>
+						  <%= @student.name %>
+						</p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @student.name %>
-</p>
+						<p>
+						  <strong>Lastname:</strong>
+						  <%= @student.lastname %>
+						</p>
 
-<p>
-  <strong>Lastname:</strong>
-  <%= @student.lastname %>
-</p>
+						<p>
+						  <strong>Nocontrol:</strong>
+						  <%= @student.nocontrol %>
+						</p>
+			</div>
 
-<p>
-  <strong>Nocontrol:</strong>
-  <%= @student.nocontrol %>
-</p>
+			<div class="col s12 m12 l6">
+				<div class="row">
+					<h4 class="center-align">Asignar Materia</h4>
+				</div>
+				<div class="row">
+					<%= form_for @assign, remote: true, html: {id:"assign-form", :"data-type" => "json"} do |f| %>
+						<%= f.collection_select :subject_id, Subject.all, :id, :name, include_blank: true%> 
+						<input type="hidden" name="assigned[student_id]" value="<%=@id%>">
+						<%= f.submit "Asignar" %>
+					<% end %>
+				</div>
+				
+			</div>
+		</div>
+		<div class="row">
+			<%= link_to 'Edit', edit_student_path(@student) %> |
+			<%= link_to 'Back', students_path %>
+		</div>
+	</div>
+</div>
 
-<p>
-  <strong>Password:</strong>
-  <%= @student.password %>
-</p>
 
-<%= link_to 'Edit', edit_student_path(@student) %> |
-<%= link_to 'Back', students_path %>
+
+
+

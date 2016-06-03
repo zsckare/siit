@@ -13,4 +13,5 @@ class Teacher < ActiveRecord::Base
 		p = Digest::SHA256.hexdigest(code)
 		return p
 	end
+	
 end
