@@ -12,6 +12,7 @@ Rails.application.routes.draw do
         resources :subjects
         resources :scores
         get 'login/attemp'
+        get 'login/student'
         get  'assigneds/get_subjects'
     end
   end
