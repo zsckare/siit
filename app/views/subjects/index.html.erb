@@ -1,8 +1,11 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Listing Subjects</h1>
-
-<table>
+<div class="row">
+  <div class="col s12 ml12 l12">
+    <div class="row">
+      <h3 class="center-align">Lista de Materias</h3>
+    </div>
+    <div class="row">
+      
+<table class="table">
   <thead>
     <tr>
       <th>Name</th>
@@ -16,14 +19,17 @@
       <tr>
         <td><%= subject.name %></td>
         <td><%= subject.cycle %></td>
-        <td><%= link_to 'Show', subject %></td>
-        <td><%= link_to 'Edit', edit_subject_path(subject) %></td>
-        <td><%= link_to 'Destroy', subject, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', subject, class: 'btn' %>
+        <%= link_to 'Edit', edit_subject_path(subject), class: 'btn' %>
+        <%= link_to 'Destroy', subject, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn' %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
+    </div>
+    <div class="row">
+      <%= link_to 'Nueva Materia', new_subject_path, class: 'btn blue' %>
+    </div>
+  </div>
+</div>
 
-<br>
-
-<%= link_to 'New Subject', new_subject_path %>
